@@ -21,10 +21,18 @@ get.biplot.data <- function(ps, ord, anova, alpha = 0.05, plot.axes = c(1, 2)) {
   setkey(sites0, Sample)
   sites.dt <- sites0[smpl.dt, nomatch = 0]
   scale <- ordiArrowMul(scores(ord)$sites[, plot.axes])
-  arrows.all <- as.data.table(
-    ord$CCA$biplot[, plot.axes] / scale,
-    keep.rownames = "Variable"
-  )
+  if (ncol(ord$CCA$biplot) < 2) {
+    arrows.all <- as.data.table(
+      ord$CCA$biplot / scale,
+      keep.rownames = "Variable"
+    )
+    arrows.all[, MDS1 := 0 ]
+  } else {
+    arrows.all <- as.data.table(
+      ord$CCA$biplot[, plot.axes] / scale,
+      keep.rownames = "Variable"
+    )
+  }
   setkey(arrows.all, Variable)
 
   cntr.dt <- data.table()
@@ -69,9 +77,13 @@ get.biplot.data <- function(ps, ord, anova, alpha = 0.05, plot.axes = c(1, 2)) {
 
   arws.dt <- arrows.all[arws.sig]
   arws.dt[, Color := ifelse(grepl(":", Variable), "gray50", "black")]
-  pc.exp <- ord$CCA$eig / sum(ord$CCA$eig)
+  # eigenvals() == c(ord$CCA$eig, ord$CA$eig)
+  pc.exp <- eigenvals(ord) / sum(eigenvals(ord))
   var.exp <- unname(paste0(round(pc.exp[plot.axes] * 100, 1), "%"))
-  var.exp.dt <- data.table(axis = names(ord$CCA$eig[plot.axes]), var.exp = var.exp)
+  var.exp.dt <- data.table(
+    axis = names(eigenvals(ord)[plot.axes]),
+    var.exp = var.exp
+    )
   labs <- var.exp.dt[, .(paste(axis, var.exp))][[1]]
   return(
     list(

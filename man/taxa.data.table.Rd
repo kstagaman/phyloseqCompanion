@@ -4,12 +4,12 @@
 \alias{taxa.data.table}
 \title{tax_table to data.table}
 \usage{
-taxa.data.table(ps, sample.column.name = "Sample")
+taxa.data.table(ps, taxon.column.name = "Taxon")
 }
 \arguments{
 \item{ps}{a phyloseq object}
 
-\item{sample.column.name}{the name of the column to keep sample names (because data.table doesn't use row names). Defaults to "Sample". Can set to FALSE to drop sample names.}
+\item{taxon.column.name}{the name of the column to keep taxon names (because data.table doesn't use row names). Defaults to "Taxon". Can set to FALSE to drop sample names.}
 }
 \description{
 Extract tax_table from a phyloseq object and turn it into a data.table
