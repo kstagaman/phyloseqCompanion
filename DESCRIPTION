@@ -15,4 +15,4 @@ Depends:
   R (>= 3.5.0),
   stringr,
   vegan
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.2

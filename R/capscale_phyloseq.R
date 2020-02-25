@@ -13,6 +13,7 @@
 #' rda.data <- capscale.phyloseq(example_phyloseq ~ Genotype * Weight + Condition(Age))
 #' print(vegan::anova.cca(rda.data$rda, by = "terms"))
 
+
 capscale.phyloseq <- function(
   formula,
   dist.method = "euclidean",
