@@ -14,5 +14,8 @@ Depends:
   phyloseq,
   R (>= 3.5.0),
   stringr,
-  vegan
-RoxygenNote: 7.0.2
+  vegan,
+  doParallel,
+  foreach,
+  GUniFrac
+RoxygenNote: 7.1.0
