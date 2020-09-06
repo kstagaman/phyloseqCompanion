@@ -18,18 +18,18 @@ get.biplot.data <- function(ps, ord, plot.axes = c(1, 2)) {
   sites.dt <- sites0[smpl.dt, nomatch = 0]
   scale <- ordiArrowMul(scores(ord)$sites[, plot.axes])
   if (ncol(ord$CCA$biplot) < 2) {
-    arrows.all <- as.data.table(
+    arws.dt <- as.data.table(
       ord$CCA$biplot / scale,
       keep.rownames = "Variable"
     )
-    arrows.all[, MDS1 := 0 ]
+    arws.dt[, MDS1 := 0 ]
   } else {
-    arrows.all <- as.data.table(
+    arws.dt <- as.data.table(
       ord$CCA$biplot[, plot.axes] / scale,
       keep.rownames = "Variable"
     )
   }
-  setkey(arrows.all, Variable)
+  setkey(arws.dt, Variable)
 
   cntr.dt <- data.table(
     scores(ord)$centroids[, plot.axes],
