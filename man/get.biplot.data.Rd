@@ -11,10 +11,6 @@ get.biplot.data(ps, ord, anova, alpha = 0.05, plot.axes = c(1, 2))
 
 \item{ord}{a cca or rda object (created by cca or capscale from vegan)}
 
-\item{anova}{an anova.cca object that has been run on the ord object}
-
-\item{alpha}{the p-value cutoff for plotting significant vectors and centroids. Defaults to 0.05}
-
 \item{plot.axes}{the CCA/RDA axes you wish to plot (must be integers). Defaults to 1 and 2}
 }
 \description{

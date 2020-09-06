@@ -1,6 +1,6 @@
-#' Capscale Phyloseq
+#' Generate Distance Matrices
 #'
-#' Run the function capscale on a phyloseq object. Returns a cca object.
+#' Generate distance matrices for multiple beta-diversity metrics. Returns a list of matrices.
 #' @param ps a phyloseq object.
 #' @param methods The names of the dissimilarity (or distance) indices. Defaults ("all") are all of Bray-Curtis, Canberra, Sørensen, W Unifrac, 0.5 Unifrac, and U Unifrac. Choosing "taxonomic" just runs Bray-Curtis, Canberra, and Sørensen. Choosing "phylogenetic" just runs W Unifrac, 0.5 Unifrac, and U Unifrac, which are implemented with \code{\link{GUniFrac}}. Can also supply a vector with any subset of these choices.
 #' @param cores integer indicating how many cores to run in parallel. Default 1 does not run in parallel.

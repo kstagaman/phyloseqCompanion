@@ -2,7 +2,7 @@
 % Please edit documentation in R/gen_dist_matrices.R
 \name{gen.dist.matrices}
 \alias{gen.dist.matrices}
-\title{Capscale Phyloseq}
+\title{Generate Distance Matrices}
 \usage{
 gen.dist.matrices(
   ps,
@@ -22,7 +22,7 @@ gen.dist.matrices(
 \item{verbose}{TRUE/FALSE passed to any functions that can be verbose}
 }
 \description{
-Run the function capscale on a phyloseq object. Returns a cca object.
+Generate distance matrices for multiple beta-diversity metrics. Returns a list of matrices.
 }
 \examples{
 data(example_phyloseq)
