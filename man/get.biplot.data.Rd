@@ -4,7 +4,7 @@
 \alias{get.biplot.data}
 \title{Extract CCA/RDA biplot data}
 \usage{
-get.biplot.data(ps, ord, anova, alpha = 0.05, plot.axes = c(1, 2))
+get.biplot.data(ps, ord, plot.axes = c(1, 2))
 }
 \arguments{
 \item{ps}{the phyloseq object that was used to create the CCA or RDA ordination}

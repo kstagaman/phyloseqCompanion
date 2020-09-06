@@ -10,7 +10,7 @@
 #' data(example_phyloseq)
 
 
-get.biplot.data <- function(ps, ord, anova, alpha = 0.05, plot.axes = c(1, 2)) {
+get.biplot.data <- function(ps, ord, plot.axes = c(1, 2)) {
   smpl.dt <- sample.data.table(ps)
   setkey(smpl.dt, Sample)
   sites0 <- as.data.table(scores(ord)$sites[, plot.axes], keep.rownames = "Sample")
