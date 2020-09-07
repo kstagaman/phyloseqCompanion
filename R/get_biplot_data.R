@@ -9,14 +9,13 @@
 #' @examples
 #' data(example_phyloseq)
 
-
 get.biplot.data <- function(ps, ord, plot.axes = c(1, 2)) {
   smpl.dt <- sample.data.table(ps)
   setkey(smpl.dt, Sample)
-  sites0 <- as.data.table(scores(ord)$sites[, plot.axes], keep.rownames = "Sample")
+  sites0 <- as.data.table(scores(ord, choices = plot.axes)$sites, keep.rownames = "Sample")
   setkey(sites0, Sample)
   sites.dt <- sites0[smpl.dt, nomatch = 0]
-  scale <- ordiArrowMul(scores(ord)$sites[, plot.axes])
+  scale <- ordiArrowMul(scores(ord, choices = plot.axes)$sites)
   if (ncol(ord$CCA$biplot) < 2) {
     arws.dt <- as.data.table(
       ord$CCA$biplot / scale,
@@ -32,7 +31,7 @@ get.biplot.data <- function(ps, ord, plot.axes = c(1, 2)) {
   setkey(arws.dt, Variable)
 
   cntr.dt <- data.table(
-    scores(ord)$centroids[, plot.axes],
+    scores(ord, choices = plot.axes)$centroids,
     keep.rownames = "Variable"
   )
   setkey(cntr.dt, Variable)
