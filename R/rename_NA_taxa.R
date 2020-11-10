@@ -18,7 +18,10 @@ rename.NA.taxa <- function(ps) {
     taxlevel <- names(tax.tbl)[col]
     prev.col <- tax.tbl[[col - 1]]
     curr.col <- tax.tbl[[col]]
-    curr.col[is.na(curr.col)] <- paste0(prev.col[is.na(curr.col)], "_", taxlevel)
+    to.replace <- is.na(curr.col) |
+      grepl("Unknown_Family", curr.col) |
+      grepl("Incertae_Sedis", curr.col)
+    curr.col[to.replace] <- paste0(prev.col[to.replace], "_", taxlevel)
     tax.tbl[[col]] <- curr.col
   }
   tax.mat <- as.matrix(tax.tbl)
