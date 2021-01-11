@@ -33,6 +33,7 @@ gen.dist.matrices <- function(
   dist.names <- copy(dists.dt$Name)
   names(dist.names) <- dist.names
   setkey(dists.dt, Name)
+  unit.tbl <- otu.matrix(ps)
 
   if (cores > 1) {
     cl <- makeCluster(cores, type = "FORK")
@@ -43,15 +44,15 @@ gen.dist.matrices <- function(
       .verbose = verbose
     ) %dopar% {
       if (is.na(dists.dt[n, "Method"])) {
-        unit.tbl <- otu.matrix(ps)
         tree <- phy_tree(ps)
         dist <- GUniFrac(unit.tbl, tree, alpha = dists.dt[n]$Param)$unifracs[, , 1] %>% as.dist()
       } else {
+
         if (is.na(dists.dt[n, "Param"])) {
-          dist <- phyloseq::distance(ps, method = dists.dt[n]$Method)
+          dist <- vegan::vegdist(unit.tbl, method = dists.dt[n]$Method)
         } else {
-          dist <- phyloseq::distance(
-            ps,
+          dist <- vegan::vegdist(
+            unit.tbl,
             method = dists.dt[n]$Method,
             binary = dists.dt[n]$Param
           )
@@ -63,15 +64,14 @@ gen.dist.matrices <- function(
   } else {
     dist.list <- lapply(dist.names, function(n) {
       if (is.na(dists.dt[n, "Method"])) {
-        asv.tbl <- otu.matrix(ps)
         tree <- phy_tree(ps)
-        dist <- GUniFrac(asv.tbl, tree, alpha = dists.dt[n]$Param)$unifracs[, , 1] %>% as.dist()
+        dist <- GUniFrac(unit.tbl, tree, alpha = dists.dt[n]$Param)$unifracs[, , 1] %>% as.dist()
       } else {
         if (is.na(dists.dt[n, "Param"])) {
-          dist <- phyloseq::distance(ps, method = dists.dt[n]$Method)
+          dist <- vegan::vegdist(unit.tbl, method = dists.dt[n]$Method)
         } else {
-          dist <- phyloseq::distance(
-            ps,
+          dist <- vegan::vegdist(
+            unit.tbl,
             method = dists.dt[n]$Method,
             binary = dists.dt[n]$Param
           )
