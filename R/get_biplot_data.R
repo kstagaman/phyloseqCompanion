@@ -52,7 +52,8 @@ get.biplot.data <- function(ps, ord, plot.axes = c(1, 2)) {
       sample.coords = sites.dt,
       vector.coords = arws.dt,
       centroid.coords = cntr.dt,
-      axes.labs = labs
+      axes.labs = labs,
+      coord.scale = scale
     )
   )
 }
