@@ -1,7 +1,7 @@
 Package: phyloseqCompanion
 Type: Package
 Title: Provides additional functions to work with phyloseq objects
-Version: 0.2.0
+Version: 0.2.1
 Author: Keaton Stagaman
 Maintainer: Keaton Stagaman <kstagaman@gmail.com>
 Description: This package contains a handful of a functions to work more easily with \code{\link{phyloseq-class}} objects. These functions included easier extraction of phyloseq components (sample_data, otu_table, tax_table) into data.frames, matrices, and data.tables. It also allows easier use of \code{\link{phyloseq}} objects with the \code{\link{vegan}} distance-based RDA ordiation function \code{\link{capscale}} and provides a function to extract plotting data from a CCA/RDA object to easily reproduce a biplot using \code{\link{ggplot2}}. 

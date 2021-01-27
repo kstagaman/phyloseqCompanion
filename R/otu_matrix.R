@@ -9,6 +9,10 @@
 #' otu.mat <- otu.matrix(example_phyloseq)
 #' View(otu.mat)
 
-otu.matrix <- function(ps) {
-  return(as(phyloseq::otu_table(ps), "matrix"))
+otu.matrix <- function(ps, force.taxa.cols = TRUE) {
+  mat <- as(phyloseq::otu_table(ps), "matrix")
+  if (taxa_are_rows(ps) & force.taxa.cols) {
+    mat <- t(mat)
+  }
+  return(mat)
 }

@@ -4,7 +4,7 @@
 \alias{otu.matrix}
 \title{otu_table to matrix}
 \usage{
-otu.matrix(ps)
+otu.matrix(ps, force.taxa.cols = TRUE)
 }
 \arguments{
 \item{ps}{a phyloseq object}
