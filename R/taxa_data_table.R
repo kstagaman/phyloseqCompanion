@@ -11,10 +11,16 @@
 #' taxa.DT
 
 taxa.data.table <- function(ps, taxon.column.name = "Taxon") {
-  return(
-    data.table::as.data.table(
+  if (taxon.column.name %in% names(as(tax_table(ps), "data.frame"))) {
+    dt <- data.table::as.data.table(
+      as(phyloseq::tax_table(ps), "matrix")
+    )
+  } else {
+    dt <- data.table::as.data.table(
       as(phyloseq::tax_table(ps), "matrix"),
       keep.rownames = taxon.column.name
     )
-  )
+  }
+
+  return(dt)
 }

@@ -21,12 +21,8 @@ numbered.ASVs <- function(ps, prefix = "ASV", save.dir = ".", save.file = "ASV_s
   saveRDS(asv.seqs, file = file.path(save.dir, paste0(save.file, ".rds")))
   n.digits <- nchar(length(asv.seqs))
   id.nums <- sapply(1:length(asv.seqs), function(d) {
-    if (nchar(d) < 4) {
-      zeroes <- paste(rep("0", n.digits - nchar(d)), collapse = "")
-      paste0(zeroes, d)
-    } else {
-      paste0(d)
-    }
+    zeroes <- paste(rep("0", n.digits - nchar(d)), collapse = "")
+    return(paste0(zeroes, d))
   }) %>% unlist()
   taxa_names(ps) <- paste0(prefix, id.nums)
   return(ps)
