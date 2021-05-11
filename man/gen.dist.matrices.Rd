@@ -22,7 +22,7 @@ gen.dist.matrices(
 
 \item{verbose}{TRUE/FALSE passed to any functions that can be verbose}
 
-\item{clr.ps}{required if methods that include "Aitchison" are called ("all", "taxonomic", "Aitchison")}
+\item{clr_ps}{required if methods that include "Aitchison" are called ("all", "taxonomic", "Aitchison")}
 }
 \description{
 Generate distance matrices for multiple beta-diversity metrics. Returns a list of matrices.
