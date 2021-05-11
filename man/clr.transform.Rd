@@ -17,11 +17,17 @@ clr.transform(
 \arguments{
 \item{ps}{a phyloseq object.}
 
-\item{methods}{The names of the dissimilarity (or distance) indices. Defaults ("all") are all of Bray-Curtis, Canberra, Sørensen, W Unifrac, 0.5 Unifrac, and U Unifrac. Choosing "taxonomic" just runs Bray-Curtis, Canberra, and Sørensen. Choosing "phylogenetic" just runs W Unifrac, 0.5 Unifrac, and U Unifrac, which are implemented with \code{\link{GUniFrac}}. Can also supply a vector with any subset of these choices.}
+\item{min_reads}{The minimum reads per sample. Default=min(sample_sums(ps))}
 
-\item{cores}{integer indicating how many cores to run in parallel. Default 1 does not run in parallel.}
+\item{min_prop}{The minimum proportional abundance of a read in any sample. Default=0.001.}
 
-\item{verbose}{TRUE/FALSE passed to any functions that can be verbose}
+\item{min_occur}{The minimum fraction of non-0 reads for each variable in all samples. Default=0}
+
+\item{smpls_by_row}{True if rows contain samples, false if rows contain variables. Default=TRUE}
+
+\item{method}{Geometric Bayesian multiplicative (GBM, default); square root BM (SQ); Bayes-Laplace BM (BL); count zero multiplicative (CZM); user-specified hyper-parameters (user). Default="CZM"}
+
+\item{lab}{Unique label (numeric or character) used to denote count zeros in X (default label=0).}
 }
 \description{
 CLR transform abundance counts in the otu_matrix of a phyloseq object and return whole phyloseq object.
@@ -29,9 +35,9 @@ CLR transform abundance counts in the otu_matrix of a phyloseq object and return
 \examples{
 data(example_phyloseq)
 
-distance.mats <- gen.dist.matrices(example_phyloseq, methods = "taxonomic", cores = 2)
+clr.ps <- clr.transform(example_phyloseq, min_reads = 10000)
 
 }
 \seealso{
-\code{\link{phyloseq}}, \code{\link{capscale}}, \code{\link{vegdist}}, \code{\link{distance}}
+\code{\link{phyloseq}}, \code{\link{codaSeq.filter}}, \code{\link{cmultRepl}}, \code{\link{codaSeq.clr}}
 }
