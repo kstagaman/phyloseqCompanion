@@ -5,7 +5,7 @@
 #' @param methods The names of the dissimilarity (or distance) indices. Defaults ("all") are all of Bray-Curtis, Canberra, Sørensen, W Unifrac, 0.5 Unifrac, and U Unifrac. Choosing "taxonomic" just runs Bray-Curtis, Canberra, and Sørensen. Choosing "phylogenetic" just runs W Unifrac, 0.5 Unifrac, and U Unifrac, which are implemented with \code{\link{GUniFrac}}. Can also supply a vector with any subset of these choices.
 #' @param cores integer indicating how many cores to run in parallel. Default 1 does not run in parallel.
 #' @param verbose TRUE/FALSE passed to any functions that can be verbose
-#' @param ... additional arguments passed to \code{\link{clr.transform}} if using methods that include "Aitchison" ("all" or "taxonomic")
+#' @param clr.ps required if methods that include "Aitchison" are called ("all", "taxonomic", "Aitchison")
 #' @seealso \code{\link{phyloseq}}, \code{\link{capscale}}, \code{\link{vegdist}}, \code{\link{distance}}
 #' @export
 #' @examples
@@ -29,8 +29,13 @@ gen.dist.matrices <- function(
     ),
   cores = 1,
   verbose = TRUE,
-  ...
+  clr_ps = NULL
 ){
+  if (methods %in% c("all", "taxonomic", "Aitchison") & is.null(clr_ps)) {
+    stop(
+      '`clr_ps` must be supplied if methods that include "Aitchison" are called ("all", "taxonomic", "Aitchison")'
+    )
+  }
   dists.dt <- data.table(
     Name = c("Bray-Curtis", "Canberra", "Sørensen", "Aitchison", "W Unifrac", "0.5 Unifrac", "U Unifrac"),
     Method = c("bray", "canberra", "bray", "euclidean", NA, NA, NA),
@@ -48,7 +53,7 @@ gen.dist.matrices <- function(
   setkey(dists.dt, Name)
   unit.tbl <- otu.matrix(ps)
   if ("Aitchison" %in% names(dists.dt)) {
-    clr.tbl <- clr.transform(ps) %>% otu.matrix()
+    clr.tbl <- otu.matrix(clr_ps)
   }
 
   if (cores > 1) {

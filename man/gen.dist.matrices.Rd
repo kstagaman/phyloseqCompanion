@@ -10,7 +10,7 @@ gen.dist.matrices(
     "Sørensen", "Aitchison", "W Unifrac", "0.5 Unifrac", "U Unifrac"),
   cores = 1,
   verbose = TRUE,
-  ...
+  clr_ps = NULL
 )
 }
 \arguments{
@@ -22,7 +22,7 @@ gen.dist.matrices(
 
 \item{verbose}{TRUE/FALSE passed to any functions that can be verbose}
 
-\item{...}{additional arguments passed to \code{\link{clr.transform}} if using methods that include "Aitchison" ("all" or "taxonomic")}
+\item{clr.ps}{required if methods that include "Aitchison" are called ("all", "taxonomic", "Aitchison")}
 }
 \description{
 Generate distance matrices for multiple beta-diversity metrics. Returns a list of matrices.
