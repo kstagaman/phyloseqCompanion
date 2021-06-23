@@ -10,16 +10,16 @@ Additionally, it relies on another R package that I've written and is only avail
 devtools::install_github("kstagaman/phyloseqCompanion")
 ```
 
-This package can be installed by running the following (require an OSU CGRB account)
+This package can be installed by running the following
 
 ```
-devtools::install_git(url = "https://gitlab.cgrb.oregonstate.edu/stagamak/dada2.pipeline.git")
+devtools::install_github("/kstagaman/sharpton-lab-dada2-pipeline")
 ```
 
 To get started, first generate the template script by running in your working directory.
 
 ```
 library(dada2.pipeline)
-# generate.template()
+generate.template()
 ```
 
