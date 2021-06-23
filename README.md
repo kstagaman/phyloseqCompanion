@@ -13,7 +13,7 @@ devtools::install_github("kstagaman/phyloseqCompanion")
 This package can be installed by running the following
 
 ```
-devtools::install_github("/kstagaman/sharpton-lab-dada2-pipeline")
+devtools::install_github("kstagaman/sharpton-lab-dada2-pipeline")
 ```
 
 To get started, first generate the template script by running in your working directory.
