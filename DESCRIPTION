@@ -1,0 +1,23 @@
+Package: dada2.pipeline
+Type: Package
+Title: Provides Functions to Easily Replicate the Sharpton Lab dada2 Pipeline
+Version: 0.1.0
+Author: Keaton Stagaman
+Maintainer: Keaton Stagaman <kstagaman@gmail.com>
+Description: This package provides functions for generating a template script and executing the dada2 pipeline as run in the Sharpton Lab at Oregon State University.
+    Get started by running `generate.template()`
+License: GPL-3.0-only
+Encoding: UTF-8
+LazyData: true
+Depends:
+  ape,
+  cowplot,
+  dada2,
+  data.table,
+  ggplot2,
+  magrittr,
+  phangorn,
+  phyloseq,
+  phyloseqCompanion,
+  seqinr,
+  stringr
