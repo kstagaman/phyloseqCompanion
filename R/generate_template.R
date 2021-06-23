@@ -5,7 +5,7 @@
 #' @export
 #' @examples
 #' generate.template()
-#' file.show("dada2_processing.Rmd")
+#' file.show("dada2_processing.R")
 
 generate.template <- function(filename = "dada2_processing.R") {
   if (!grepl("\\.R$", filename)) { filename <- paste0(filename, ".R")}

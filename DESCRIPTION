@@ -21,3 +21,4 @@ Depends:
   phyloseqCompanion,
   seqinr,
   stringr
+RoxygenNote: 7.1.1
