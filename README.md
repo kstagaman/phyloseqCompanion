@@ -13,7 +13,7 @@ devtools::install_github("kstagaman/phyloseqCompanion")
 This package can be installed by running the following (require an OSU CGRB account)
 
 ```
-install_git(url = "https://gitlab.cgrb.oregonstate.edu/stagamak/dada2.pipeline.git")
+devtools::install_git(url = "https://gitlab.cgrb.oregonstate.edu/stagamak/dada2.pipeline.git")
 ```
 
 To get started, first generate the template script by running in your working directory.
