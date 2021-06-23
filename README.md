@@ -4,9 +4,17 @@ This package is designed to make it easy to replicably conduct the dada2 pipelin
 
 To begin, if you want to build phylogenetic trees, you need the [mothur](https://mothur.org/) and [FastTree](http://www.microbesonline.org/fasttree/) programs installed on the machine on which you will be conducting the pipeline.
 
-Additionally, it relies on another R package that I've written and is only available on GitHub. You can install that package by running the following:
+Additionally, it relies on three packages that will not auto-install if you first try to install it right away. Make sure you run the following code for package you don't yet have installed:
 
 ```
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+for (pkg in c("dada2", "phyloseq")) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    BiocManager::install(pkg)
+  }
+}
 devtools::install_github("kstagaman/phyloseqCompanion")
 ```
 
