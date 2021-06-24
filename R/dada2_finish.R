@@ -35,7 +35,12 @@ dada2.finish <- function(
   if (length(names(run.env)) == 0) {
     stop("Functions 'initiate.pipeline() and 'dada2.upto.qualPlots()' must be run first.")
   }
-  if (!any(file.exists(list.files(pattern = "qualPlot.pdf")))) {
+  if (is.null(user.output.path)) {
+    output <- run.env$output.path
+  } else {
+    output <- user.output.path
+  }
+  if (!any(file.exists(list.files(path = output, pattern = "qualPlot.pdf")))) {
     stop("Function 'dada2.upto.qualPlots()' must be run first.")
   }
   if (build.tree) {
@@ -69,11 +74,7 @@ dada2.finish <- function(
       )
     }
   }
-  if (is.null(user.output.path)) {
-    output <- run.env$output.path
-  } else {
-    output <- user.output.path
-  }
+
   filtFs <- file.path(
     fastq.path,
     "Filtered",
