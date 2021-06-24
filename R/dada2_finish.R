@@ -40,7 +40,7 @@ dada2.finish <- function(
   } else {
     output <- user.output.path
   }
-  if (!any(file.exists(list.files(path = output, pattern = "qualPlot.pdf")))) {
+  if (!any(file.exists(list.files(path = output, pattern = "qualPlot.pdf", full.names = T)))) {
     stop("Function 'dada2.upto.qualPlots()' must be run first.")
   }
   if (build.tree) {
