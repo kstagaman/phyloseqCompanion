@@ -56,7 +56,7 @@ dada2.finish <- function(
     }
     if (is.null(guide.seqs.file)) {
       writeLines(guide.seqs.lines, con = "guide_seqs.fasta")
-      guides.seqs.file <- "guide_seqs.fasta"
+      guide.seqs.file <- "guide_seqs.fasta"
     }
     if (is.null(alignment.template.file)) {
       writeLines(alignment.template.file.lines, con = "template.align")
