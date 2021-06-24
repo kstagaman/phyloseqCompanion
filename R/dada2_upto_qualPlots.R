@@ -31,7 +31,7 @@ dada2.upto.qualPlots <- function(
   } else {
     theme_set(theme_cowplot())
     if (is.null(user.output.path)) {
-      output <- output.path
+      output <- run.env$output.path
     } else {
       output <- user.output.path
     }
