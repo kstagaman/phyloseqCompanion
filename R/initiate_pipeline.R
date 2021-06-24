@@ -8,7 +8,6 @@
 #' list.files()
 
 initiate.pipeline <- function() {
-  run.env <- new.env()
   dada.pkg.ver <- paste0("dada2_", packageVersion("dada2"))
   process.date <- Sys.Date()
   process.id <- paste(dada.pkg.ver, process.date, sep = "_")
