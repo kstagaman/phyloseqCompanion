@@ -54,14 +54,6 @@ dada2.finish <- function(
         "It appears you are trying to build a phylogenetic tree, but you have not provided a viable path to FastTree."
       )
     }
-    if (is.null(guide.seqs.file)) {
-      writeLines(guide.seqs.lines, con = "guide_seqs.fasta")
-      guide.seqs.file <- "guide_seqs.fasta"
-    }
-    if (is.null(alignment.template.file)) {
-      writeLines(alignment.template.file.lines, con = "template.align")
-      alignment.template.file <- "template.align"
-    }
     if (!(
       guide.seqs.file %in% list.files() &
       alignment.template.file %in% list.files()
