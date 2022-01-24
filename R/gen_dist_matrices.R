@@ -41,14 +41,14 @@ gen.dist.matrices <- function(
     Method = c("bray", "canberra", "bray", "euclidean", NA, NA, NA),
     Param = c(0, NA, 1, NA, 1, 0.5, 0)
   )
-  if (methods == "taxonomic") {
+  if (methods[1] == "taxonomic") {
     dists.dt <- dists.dt[!is.na(Method)]
-  } else if (methods == "phylogenetic") {
+  } else if (methods[1] == "phylogenetic") {
     dists.dt <- dists.dt[is.na(Method)]
-  } else if (methods != "all") {
+  } else if (methods[1] != "all") {
     dists.dt <- dists.dt[Name %in% methods]
   }
-  dist.names <- copy(dists.dt$Name) %>% set_names()
+  dist.names <- copy(dists.dt$Name) %>% magrittr::set_names(., .)
   names(dist.names) <- dist.names
   setkey(dists.dt, Name)
   unit.tbl <- otu.matrix(ps)
