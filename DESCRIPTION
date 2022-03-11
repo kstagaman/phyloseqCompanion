@@ -1,6 +1,7 @@
 Package: phyloseqCompanion
 Type: Package
 Title: Provides additional functions to work with phyloseq objects
+Date: 2022-01-24
 Version: 0.3.1
 Author: Keaton Stagaman
 Maintainer: Keaton Stagaman <kstagaman@gmail.com>
