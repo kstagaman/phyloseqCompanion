@@ -15,6 +15,6 @@ sample.data.table <- function(ps, sample.column.name = "Sample") {
     data.table::as.data.table(
       as(phyloseq::sample_data(ps), "data.frame"),
       keep.rownames = sample.column.name
-      )
     )
+  )
 }
