@@ -6,8 +6,9 @@
 \usage{
 gen.dist.matrices(
   ps,
-  methods = c("all", "taxonomic", "phylogenetic", "Bray-Curtis", "Canberra",
-    "Sørensen", "Aitchison", "W Unifrac", "0.5 Unifrac", "U Unifrac"),
+  methods = c("all", "taxonomic", "taxonomic with Aitchison", "phylogenetic",
+    "Bray-Curtis", "Canberra", "Sørensen", "Aitchison", "W Unifrac", "0.5 Unifrac",
+    "U Unifrac"),
   cores = 1,
   verbose = TRUE,
   clr_ps = NULL
