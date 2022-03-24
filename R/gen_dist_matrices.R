@@ -88,7 +88,9 @@ gen.dist.matrices <- function(
     )
   )
   get.arg.meta <- function(choices, name) {
-    sapply(choices, function(choice) { arg.res[[choice]][[name]] })
+    lapply(choices, function(choice) { arg.res[[choice]][[name]] }) %>%
+      unlist() %>%
+      unname()
   }
   req.clrPS <- any(get.arg.meta(method.choices, "Req.clrPS")) &
     is.null(clr_ps)
@@ -112,8 +114,8 @@ gen.dist.matrices <- function(
   )
   setkey(dists.dt0, ID)
   dists.dt <- dists.dt0[
-    unique(unname(unlist(get.arg.meta(method.choices, "Methods"))))
-    ]
+    unique(get.arg.meta(method.choices, "Methods"))
+  ]
   setkey(dists.dt, ID)
   dist.ids <- copy(dists.dt$ID) %>% set_names(., get.arg.meta(., "Name"))
   unit.tbl <- otu.matrix(ps)
@@ -136,7 +138,7 @@ gen.dist.matrices <- function(
           unit.tbl,
           tree,
           alpha = dists.dt[n]$Param
-          )$unifracs[, , 1] %>%
+        )$unifracs[, , 1] %>%
           as.dist()
       } else {
         if (is.na(dists.dt[n, "Param"])) {
@@ -164,7 +166,7 @@ gen.dist.matrices <- function(
           unit.tbl,
           tree,
           alpha = dists.dt[n]$Param
-          )$unifracs[, , 1] %>%
+        )$unifracs[, , 1] %>%
           as.dist()
       } else {
         if (is.na(dists.dt[n, "Param"])) {
