@@ -21,7 +21,9 @@ phyloseq2lefse <- function(
   transpose.otus = TRUE
 ) {
   if (length(covars) > 2) {
-    warning("The length of the `covars` vector is greater than 2. File must be edited manually for use in LEfSe, which throws and error when there are more rows than specific classes, subclasses, and subjects.")
+    warning(
+      "The length of the `covars` vector is greater than 2. File must be edited manually for use in LEfSe, which throws and error when there are more rows than specific classes, subclasses, and subjects."
+      )
   }
   smpl.data <- sample.data.frame(ps)
   smpl.data$Sample <- row.names(smpl.data)

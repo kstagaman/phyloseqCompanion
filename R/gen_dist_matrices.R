@@ -95,7 +95,7 @@ gen.dist.matrices <- function(
   req.clrPS <- any(get.arg.meta(method.choices, "Req.clrPS")) &
     is.null(clr_ps)
   if (req.clrPS) {
-    stop(
+    rlang::abort(
       '`clr_ps` must be supplied if methods that include "Aitchison" are called ("all", "taxonomic with Aitchison", "Aitchison")'
     )
   }

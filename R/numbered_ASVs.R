@@ -15,7 +15,9 @@
 
 numbered.ASVs <- function(ps, prefix = "ASV", save.dir = ".", save.file = "ASV_sequences") {
   if (prefix == "" | length(prefix) == 0 | is.logical(prefix)) {
-    stop("prefix must be a non-numeric-only string of length greater than 0 and not logical (TRUE/FALSE)")
+    rlang::abort(
+      "prefix must be a non-numeric-only string of length greater than 0 and not logical (TRUE/FALSE)"
+      )
   }
   asv.seqs <- taxa_names(ps)
   saveRDS(asv.seqs, file = file.path(save.dir, paste0(save.file, ".rds")))
