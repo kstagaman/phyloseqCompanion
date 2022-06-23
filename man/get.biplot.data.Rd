@@ -4,17 +4,17 @@
 \alias{get.biplot.data}
 \title{Extract CCA/RDA biplot data}
 \usage{
-get.biplot.data(ps, ord, plot.axes = c(1, 2))
+get.biplot.data(smpls, ord, plot.axes = c(1, 2))
 }
 \arguments{
-\item{ps}{the phyloseq object that was used to create the CCA or RDA ordination}
+\item{smpls}{a data.frame/data.table or the phyloseq object that was used to create the CCA or RDA ordination}
 
 \item{ord}{a cca or rda object (created by cca or capscale from vegan)}
 
 \item{plot.axes}{the CCA/RDA axes you wish to plot (must be integers). Defaults to 1 and 2}
 }
 \description{
-Get all the data required to plot a CCA or RDA biplot in ggplot. Returns a list of data.tables (and one character vector) that can easily be used to create a biplot in ggplot. (Or even in the base plot function.)
+Get all the data required to plot a CCA or RDA biplot in ggplot. Returns a list of data.tables (and one character vector) that can easily be used to create a biplot in ggplot (or the base plot function).
 }
 \examples{
 data(example_phyloseq)

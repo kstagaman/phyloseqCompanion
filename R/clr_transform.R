@@ -1,6 +1,6 @@
-#' Center Log Ratio tranform phyloseq
-#'
-#' CLR transform abundance counts in the otu_matrix of a phyloseq object and return whole phyloseq object.
+#' @name clr.transform
+#' @title Center Log Ratio tranform phyloseq
+#' @description CLR transform abundance counts in the otu_matrix of a phyloseq object and return whole phyloseq object.
 #' @param ps a phyloseq object.
 #' @param min_reads The minimum reads per sample. Default=min(sample_sums(ps))
 #' @param min_prop The minimum proportional abundance of a read in any sample. Default=0.001.

@@ -1,6 +1,6 @@
-#' Phyloseq to LefSe
-#'
-#' Convert phyloseq otu and tax tables into a file that can be fed into LefSe
+#' @name phyloseq2lefse
+#' @title Phyloseq to LefSe
+#' @description Convert phyloseq otu and tax tables into a file that can be fed into LefSe
 #' @param ps A phyloseq object that contains a sample data table, an OTU (or ASV) table, and a taxonomy table.
 #' @param covars A character vector with, the names of the variables in the sample data that will be used in LefSe. Max length: 2.
 #' @param file.name Character string with name of file you want to write the output to. The convention is to use the .txt extension.

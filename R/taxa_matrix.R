@@ -1,6 +1,6 @@
-#' tax_table to matrix
-#'
-#' Extract tax_table from a phyloseq object and turn it into a matrix
+#' @name taxa.matrix
+#' @title tax_table to matrix
+#' @description Extract tax_table from a phyloseq object and turn it into a matrix
 #' @param ps a phyloseq object
 #' @seealso \code{\link{as.matrix}}, \code{\link{phyloseq}}, \code{\link{otu_table}}
 #' @export

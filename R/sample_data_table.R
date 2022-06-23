@@ -1,6 +1,6 @@
-#' sample_data to data.table
-#'
-#' Extract sample_data from a phyloseq object and turn it into a data.table
+#' @name sample.data.table
+#' @title sample_data to data.table
+#' @description Extract sample_data from a phyloseq object and turn it into a data.table
 #' @param ps a phyloseq object
 #' @param sample.column.name the name of the column to keep sample names (because data.table doesn't use row names). Defaults to "Sample". Can set to FALSE to drop sample names.
 #' @seealso \code{\link{data.table}}, \code{\link{phyloseq}}, \code{\link{sample_data}}

@@ -1,7 +1,7 @@
 Package: phyloseqCompanion
 Type: Package
 Title: Provides additional functions to work with phyloseq objects
-Version: 0.3.4
+Version: 0.4
 Date: `Sys.Date()`
 Author: Keaton Stagaman
 Maintainer: Keaton Stagaman <kstagaman@gmail.com>
@@ -23,4 +23,4 @@ Depends:
 Suggests:
   CoDaSeq,
   zCompositions
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0

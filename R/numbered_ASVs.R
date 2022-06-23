@@ -1,6 +1,6 @@
-#' Numbered ASVs
-#'
-#' Replace ASV names (sequences) as output by dada2 with ASV numbers (e.g. ASV001, ASV002, ...). Returns a phyloseq object with the new names.
+#' @name numbered.ASVs
+#' @title Numbered ASVs
+#' @description Replace ASV names (sequences) as output by dada2 with ASV numbers (e.g. ASV001, ASV002, ...). Returns a phyloseq object with the new names.
 #' @param ps a phyloseq object
 #' @param prefix The string you want to come before the id numbers. Defaults to "ASV". Cannot be "" or logical (TRUE/FALSE) as numbers can't be used as column names in data.frames.
 #' @param save.dir directory in which to save the original ASV sequences, for reference. Defaults to "." (current directory).

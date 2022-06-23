@@ -1,6 +1,6 @@
-#' otu_table to matrix
-#'
-#' Extract otu_table from a phyloseq object and turn it into a matrix
+#' @name otu.matrix
+#' @title otu_table to matrix
+#' @description Extract otu_table from a phyloseq object and turn it into a matrix
 #' @param ps a phyloseq object
 #' @seealso \code{\link{as}}, \code{\link{phyloseq}}, \code{\link{otu_table}}
 #' @export

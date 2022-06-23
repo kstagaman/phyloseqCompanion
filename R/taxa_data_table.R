@@ -1,6 +1,6 @@
-#' tax_table to data.table
-#'
-#' Extract tax_table from a phyloseq object and turn it into a data.table
+#' @name taxa.data.table
+#' @title tax_table to data.table
+#' @description Extract tax_table from a phyloseq object and turn it into a data.table
 #' @param ps a phyloseq object
 #' @param taxon.column.name the name of the column to keep taxon names (because data.table doesn't use row names). Defaults to "Taxon". Can set to FALSE to drop sample names.
 #' @seealso \code{\link{data.table}}, \code{\link{phyloseq}}, \code{\link{otu_table}}

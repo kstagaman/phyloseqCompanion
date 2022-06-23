@@ -1,6 +1,6 @@
-#' Extract CCA/RDA biplot data
-#'
-#' Get all the data required to plot a CCA or RDA biplot in ggplot. Returns a list of data.tables (and one character vector) that can easily be used to create a biplot in ggplot (or the base plot function).
+#' @name get.biplot.data
+#' @title Extract CCA/RDA biplot data
+#' @description Get all the data required to plot a CCA or RDA biplot in ggplot. Returns a list of data.tables (and one character vector) that can easily be used to create a biplot in ggplot (or the base plot function).
 #' @param smpls a data.frame/data.table or the phyloseq object that was used to create the CCA or RDA ordination
 #' @param ord a cca or rda object (created by cca or capscale from vegan)
 #' @param plot.axes the CCA/RDA axes you wish to plot (must be integers). Defaults to 1 and 2

@@ -1,6 +1,6 @@
-#' rename NA taxonomic levels
-#'
-#' Rename taxonomic levels so that NAs don't all get lumped together (i.e. uses higher-level assignments in lower-level names to preserve lineages).
+#' @name rename.NA.taxa
+#' @title rename NA taxonomic levels
+#' @description Rename taxonomic levels so that NAs don't all get lumped together (i.e. uses higher-level assignments in lower-level names to preserve lineages).
 #' @param ps a phyloseq object
 #' @seealso \code{\link{tax_table}}, \code{\link{phyloseq}}
 #' @export
