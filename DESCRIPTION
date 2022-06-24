@@ -22,5 +22,7 @@ Depends:
   vegan
 Suggests:
   CoDaSeq,
+  phytools,
+  picante,
   zCompositions
 RoxygenNote: 7.2.0
