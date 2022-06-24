@@ -1,7 +1,7 @@
 Package: phyloseqCompanion
 Type: Package
 Title: Provides additional functions to work with phyloseq objects
-Version: 0.4
+Version: 1.0
 Date: `Sys.Date()`
 Author: Keaton Stagaman
 Maintainer: Keaton Stagaman <kstagaman@gmail.com>
