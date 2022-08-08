@@ -40,6 +40,8 @@ get.biplot.data <- function(smpls, ord, plot.axes = c(1, 2)) {
   setkey(arws.dt, Variable)
   if (anyNA(ord.scores$centroids)) {
     cntr.dt <- NA
+  } else if (is.null(ord.scores$centroids)) {
+    cntr.dt <- NULL
   } else {
     cntr.dt <- data.table(
       ord.scores$centroids,

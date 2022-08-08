@@ -1,7 +1,7 @@
 Package: phyloseqCompanion
 Type: Package
 Title: Provides additional functions to work with phyloseq objects
-Version: 1.0
+Version: 1.1
 Date: `Sys.Date()`
 Author: Keaton Stagaman
 Maintainer: Keaton Stagaman <kstagaman@gmail.com>
@@ -25,4 +25,4 @@ Suggests:
   phytools,
   picante,
   zCompositions
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
